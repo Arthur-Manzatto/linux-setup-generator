@@ -6,16 +6,16 @@ html,body{
     height: 100%;
     background: #120F30;
     overflow-x: hidden;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: monospace;
     padding-top: 60px;
 }
 #home{
     height: 40%;
 }
 nav.nav-custom{
-    background: #0D0B1A
-;
+    background: #0D0B1A;
     padding: 15px 0;
+    font-size: 18px;
     
 }
 .navbar-dark .navbar-nav .nav-link{
@@ -34,7 +34,43 @@ h1{
     margin-bottom: 30px ;
     color: white;
 }
+h2{
+    color: white;
+    padding-bottom: 15px;
+}
 #home p{
     color: white;
+}
+
+#checklist{
+    margin-top: 30px;
+}
+
+.custom-control-label::before {
+  width: 2.8rem !important;
+  height: 1.5rem !important;
+  border-radius: 1.5rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+.custom-control-label::after {
+  width: 0.9rem !important;
+  height: 0.9rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  left: -2.05rem !important;
+}
+
+.custom-control-input:checked ~ .custom-control-label::after {
+  top: 50% !important;
+  transform: translateY(-50%) translateX(1.3rem) !important;
+}
+
+.custom-section{
+    background: #0D0B1A ;
+    padding: 20px;
+    border-radius: 20px;
+    gap: 45px
 }
 
