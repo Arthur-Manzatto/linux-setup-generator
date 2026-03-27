@@ -68,6 +68,41 @@ const apps_communication = [
   { id: "signal",      name: "Signal",          logo: "name/signal" },
 ];
 
+const apps_utilities = [
+
+  { id: "htop",        name: "Htop",  },
+  { id: "timeshift",   name: "Timeshift",  },
+  { id: "flatpak",     name: "Flatpak",  },
+  { id: "7zip",        name: "7zip",  },
+  { id: "qbittorrent", name: "qBittorrent",  },
+  { id: "keepassxc",   name: "KeePassXC",  },
+  { id: "bitwarden",   name: "Bitwarden",  },
+  { id: "syncthing",   name: "Syncthing",  },
+  { id: "rclone",      name: "rclone",  },
+
+];
+
+const apps_gaming = [
+
+  { id: "steam",        name: "Steam",  },
+  { id: "lutris",       name: "Lutris",  },
+  { id: "heroic",       name: "Heroic",  },
+  { id: "mangohud",     name: "MangoHud",  },
+  { id: "wine",         name: "Wine",  },
+  { id: "bottles",      name: "Bottles",  },
+  { id: "gamemode",     name: "GameMode",  },
+  { id: "retroarch",    name: "RetroArch",  },
+
+]
+
+const apps_system = [
+
+  { id: "virtualbox",   name: "VirtualBox",  },
+  { id: "gnometweaks",  name: "GNOME Tweaks",  },
+  { id: "neofetch",     name: "neofetch",  },
+  { id: "nitrogen",     name: "Nitrogen",  },
+
+]
 
 function renderApps(apps, sectionId) {
   apps.forEach(app => {
@@ -78,7 +113,7 @@ function renderApps(apps, sectionId) {
                 <label class="custom-control-label" for="${app.id}">
                 </label>
         </div>
-        <span class="text-white ml-3">${app.name}</span>
+        <span class="text-white ">${app.name}</span>
         <img src="./img/${app.id}.svg" class="img-fluid" style="max-width: 20px;" alt="${app.name} logo">
     </div>
     `;
@@ -91,6 +126,9 @@ renderApps(apps_productivity,  "productivity-section");
 renderApps(apps_multimedia,    "multimedia-section");
 renderApps(apps_security,      "security-section");
 renderApps(apps_communication, "communication-section");
+renderApps(apps_utilities,     "utilities-section");
+renderApps(apps_gaming,        "gaming-section");
+renderApps(apps_system,        "system-section")
 
 function generate(){
     let selected = []
