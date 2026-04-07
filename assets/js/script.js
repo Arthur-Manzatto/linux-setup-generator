@@ -169,10 +169,22 @@ document.getElementById('floating-btn').addEventListener('click', function() {
 
 const btn = document.getElementById("floating-btn");
 const box = document.getElementById("confirm-generation");
+const overlay = document.querySelector(".overlay-div");
+const btnConfirm = document.getElementById("btn-confirm")
 
 btn.addEventListener("click", () => {
   box.classList.toggle("ativo");
   btn.classList.toggle("ativo");
+   
 });
+btnConfirm.addEventListener("click", () => {
+  overlay.classList.toggle("ativo");
+})
 
+
+function confirm_overlay(){
+  document.getElementById("overlay-div").style.display = 'block';
+
+
+}
 
