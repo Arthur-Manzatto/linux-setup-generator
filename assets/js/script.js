@@ -115,7 +115,7 @@ function renderApps(apps, sectionId) {
                 </label>
         </div>
         <span class="text-white ">${app.name}</span>
-        <img src="./img/${app.id}.svg" class="img-fluid" style="max-width: 20px;" alt="${app.name} logo">
+        <img src="../assets/img/${app.id}.svg" class="img-fluid" style="max-width: 20px;" alt="${app.name} logo">
     </div>
     `;
   });
@@ -135,48 +135,44 @@ let selected = []
 
 function switch_clicked(element){
   const value = element.value;
-  const confirm_div = document.getElementById("confirm-generation")
+  const confirm_div = document.getElementById("numbers-selected-apps")
+  const apps_list = document.getElementById("apps-list")
+  const floating_btn = document.getElementById("floating-btn");
 
   if (element.checked) {
     selected.push(value);
+
   } else {
     selected = selected.filter(item => item !== value);
   }
 
-  confirm_div.innerHTML = `<p>Number of Apps Selected: ${selected.length}</p>`
-  confirm_div.innerHTML += `<ul>${selected.map(item => `<li>${item}</li>`).join('')}</ul>`
-
-
-  if(selected.length == 0){
-    confirm_div.style.display = "none"
-  }else{
-    confirm_div.style.display = "block"
-  }
+  confirm_div.innerHTML = `<p>Your Selected Apps: ${selected.length}</p>`
+  confirm_div.innerHTML += `<p>Your Selected Distro: ${document.getElementById("select-distro").value}</p>`
+  apps_list.innerHTML = `${selected.map(item => `<li>${item}</li>`).join('')}`
 
   console.log(selected);
-    
-    // let script = "sudo snap install"
-
-    // selected.forEach(appSelected => {
-    //     if(appSelected == "spotify"){
-    //         script += " spotify"
-    //     }else if(appSelected == "vscode"){
-    //         script += " code --classic"
-    //     }
-    // })
-    // console.log(script)
 }
 
-document.getElementById('btn-confirm').addEventListener('click', function() {
+document.getElementById('floating-btn').addEventListener('click', function() {
   const div = document.getElementById('confirm-generation');
+  const floating_btn = document.getElementById("floating-btn");
+
   if(div.style.display === 'none' || div.style.display === '') {
     div.style.display = 'block';
+    floating_btn.innerHTML = "<i class='bi bi-arrow-left-square' style='font-size: x-large;'></i>"
+
   } else {
     div.style.display = 'none';
+    floating_btn.innerHTML = "<i class='bi bi-download' style='font-size: x-large;'></i>"
   }
 });
 
-function generate(){
-    
+const btn = document.getElementById("floating-btn");
+const box = document.getElementById("confirm-generation");
 
-}
+btn.addEventListener("click", () => {
+  box.classList.toggle("ativo");
+  btn.classList.toggle("ativo");
+});
+
+
