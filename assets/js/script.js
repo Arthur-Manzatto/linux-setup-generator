@@ -188,3 +188,6 @@ function confirm_overlay(){
 
 }
 
+function exit(){
+  document.getElementById("overlay-div").classList.remove("ativo");
+}

@@ -9,9 +9,7 @@ html,body{
     font-family: monospace;
     padding-top: 60px;
 }
-#home{
-    height: 60%;
-}
+
 nav.nav-custom{
     background: #0D0B1A;
     padding: 15px 0;
@@ -45,6 +43,7 @@ h2{
 
 #checklist{
     margin-top: 30px;
+    padding: 3rem 0;
 }
 
 
@@ -75,10 +74,6 @@ h2{
     border-radius: 20px;
     gap: 45px;
     width: 100%;
-}
-
-#checklist {
-    padding: 3rem 0;
 }
 
 .app-card {
@@ -276,6 +271,7 @@ h2{
   display: flex;
   flex-direction: column;
   justify-content: center; 
+  
 
   width: 260px;
   height: 50vh;
@@ -286,6 +282,7 @@ h2{
 
   transition: transform 0.4s ease;
   z-index: 20;
+  overflow-y: scroll;
 }
 
 /* quando ativa */
@@ -318,10 +315,10 @@ h2{
     border-radius: 12px;
     padding: 7px;
 
+    flex: 1;              /* ocupa espaço disponível */
+    height: 25vh;         /* REMOVE o 25vh */
+    overflow-y: auto;
     margin-top: 25px;
-
-    height: 25vh;
-    overflow-y: scroll;
 
 }
 
@@ -346,7 +343,6 @@ h2{
 
 #btn-confirm{
     width: 90%;
-    margin-top: 40px;
 }
 
 
@@ -369,4 +365,30 @@ h2{
 .overlay-div.ativo {
   opacity: 1;
   pointer-events: all;
+}
+
+.script-section{
+    position: relative;
+    background-color: rgb(206, 203, 203);
+    color: #0D0B1A;
+    width: 70vw;
+    height: 70vh;
+
+    border-radius: 20px;
+    
+    
+    overflow-y: scroll;
+}
+
+.btn-overlay{
+
+    position: absolute;
+    top: 25px;
+    left: 0px;
+    transform: translateY(-50%);
+    border-radius: 0 0 20px 0;
+   
+    height: 50px;
+    width: 4vw;
+    
 }
