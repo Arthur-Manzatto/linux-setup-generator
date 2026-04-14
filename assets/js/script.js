@@ -104,6 +104,16 @@ const apps_system = [
 
 ]
 
+  $.ajax({
+    url: '../backend/get_apps.php',
+    method: 'GET',
+    dataType: 'json',
+    success: function(data) {
+
+    }
+  })
+
+
 function renderApps(apps, sectionId) {
   apps.forEach(app => {
     document.getElementById(sectionId).innerHTML += `
