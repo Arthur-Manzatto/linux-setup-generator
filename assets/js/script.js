@@ -1,117 +1,117 @@
 const apps_browsers = [
-  
-  { id: "firefox",     name: "Firefox",         logo: "name/firefox" },
-  { id: "chrome",      name: "Chrome",          logo: "name/google%20chrome" },
-  { id: "brave",       name: "Brave",           logo: "name/brave" },
-  { id: "opera",       name: "Opera",           logo: "name/opera" },
+
+  { id: "firefox", name: "Firefox", logo: "name/firefox" },
+  { id: "chrome", name: "Chrome", logo: "name/google%20chrome" },
+  { id: "brave", name: "Brave", logo: "name/brave" },
+  { id: "opera", name: "Opera", logo: "name/opera" },
 
 ];
 
 const apps_dev = [
 
-  { id: "vscode",      name: "VS Code",         logo: "name/vs%20code" },
-  { id: "jetbrains",   name: "JetBrains",       logo: "name/jetBrains%20toolbox" },
-  { id: "git",         name: "Git",             logo: "name/git" },
-  { id: "nodejs",      name: "Node.js",         logo: "name/node%20js" },
-  { id: "python",      name: "Python 3",        logo: "name/python%203" },
-  { id: "docker",      name: "Docker",          logo: "name/docker" },
-  { id: "neovim",      name: "Neovim",          logo: "name/neovim" },
-  { id: "go",          name: "Go",              logo: "name/go" },
-  { id: "rust",        name: "Rust",            logo: "name/rust" },
-  { id: "java",        name: "Java JDK",        logo: "java.com" },
-  { id: "php",         name: "PHP",             logo: "name/php" },
-  { id: "postgresql",  name: "PostgreSQL",      logo: "name/postgresql" },
-  { id: "mysql",       name: "MySQL",           logo: "name/mysql" },
-  { id: "tmux",        name: "Tmux",            logo: "name/tmux" },
-  { id: "zsh",         name: "Zsh",             logo: "name/zsh" },
+  { id: "vscode", name: "VS Code", logo: "name/vs%20code" },
+  { id: "jetbrains", name: "JetBrains", logo: "name/jetBrains%20toolbox" },
+  { id: "git", name: "Git", logo: "name/git" },
+  { id: "nodejs", name: "Node.js", logo: "name/node%20js" },
+  { id: "python", name: "Python 3", logo: "name/python%203" },
+  { id: "docker", name: "Docker", logo: "name/docker" },
+  { id: "neovim", name: "Neovim", logo: "name/neovim" },
+  { id: "go", name: "Go", logo: "name/go" },
+  { id: "rust", name: "Rust", logo: "name/rust" },
+  { id: "java", name: "Java JDK", logo: "java.com" },
+  { id: "php", name: "PHP", logo: "name/php" },
+  { id: "postgresql", name: "PostgreSQL", logo: "name/postgresql" },
+  { id: "mysql", name: "MySQL", logo: "name/mysql" },
+  { id: "tmux", name: "Tmux", logo: "name/tmux" },
+  { id: "zsh", name: "Zsh", logo: "name/zsh" },
 
 ];
 
 const apps_productivity = [
 
-  { id: "libreoffice", name: "LibreOffice",     logo: "name/LibreOffice" },
-  { id: "onlyoffice",  name: "OnlyOffice",      logo: "name/onlyOffice" },
-  { id: "okular",      name: "Okular",          logo: "name/okular" },
-  { id: "obsidian",    name: "Obsidian",        logo: "name/obsidian" },
+  { id: "libreoffice", name: "LibreOffice", logo: "name/LibreOffice" },
+  { id: "onlyoffice", name: "OnlyOffice", logo: "name/onlyOffice" },
+  { id: "okular", name: "Okular", logo: "name/okular" },
+  { id: "obsidian", name: "Obsidian", logo: "name/obsidian" },
 
 ];
 
 const apps_multimedia = [
 
-  { id: "vlc",         name: "VLC",             logo: "name/vlc" },
-  { id: "gimp",        name: "GIMP",            logo: "name/gimp" },
-  { id: "obsstudio",   name: "OBS Studio",      logo: "obsproject.com" },
-  { id: "kdenlive",    name: "Kdenlive",        logo: "kdenlive.org" },
-  { id: "audacity",    name: "Audacity",        logo: "audacityteam.org" },
-  { id: "inkscape",    name: "Inkscape",        logo: "name/inkscape" },
-  { id: "blender",     name: "Blender",         logo: "name/blender" },
-  { id: "krita",       name: "Krita",           logo: "name/krita" },
-  { id: "handbrake",   name: "HandBrake",       logo: "handbrake.fr" },
-  { id: "spotify",     name: "Spotify",         logo: "name/spotify" },
+  { id: "vlc", name: "VLC", logo: "name/vlc" },
+  { id: "gimp", name: "GIMP", logo: "name/gimp" },
+  { id: "obsstudio", name: "OBS Studio", logo: "obsproject.com" },
+  { id: "kdenlive", name: "Kdenlive", logo: "kdenlive.org" },
+  { id: "audacity", name: "Audacity", logo: "audacityteam.org" },
+  { id: "inkscape", name: "Inkscape", logo: "name/inkscape" },
+  { id: "blender", name: "Blender", logo: "name/blender" },
+  { id: "krita", name: "Krita", logo: "name/krita" },
+  { id: "handbrake", name: "HandBrake", logo: "handbrake.fr" },
+  { id: "spotify", name: "Spotify", logo: "name/spotify" },
 
 ];
 
 const apps_security = [
 
-  { id: "clamav",      name: "ClamAV",          logo: "clamav.net" },
-  { id: "ufw",         name: "UFW",             logo: "name/ubuntu" },
-  { id: "wireshark",   name: "Wireshark",       logo: "wireshark.org" },
+  { id: "clamav", name: "ClamAV", logo: "clamav.net" },
+  { id: "ufw", name: "UFW", logo: "name/ubuntu" },
+  { id: "wireshark", name: "Wireshark", logo: "wireshark.org" },
 
 ];
 
 const apps_communication = [
-    
-  { id: "discord",     name: "Discord",         logo: "name/discord" },
-  { id: "telegram",    name: "Telegram",        logo: "name/telegram" },
-  { id: "zoom",        name: "Zoom",            logo: "zoom.us" },
-  { id: "thunderbird", name: "ThunderBird",     logo: "thunderbird.net" },
-  { id: "signal",      name: "Signal",          logo: "name/signal" },
+
+  { id: "discord", name: "Discord", logo: "name/discord" },
+  { id: "telegram", name: "Telegram", logo: "name/telegram" },
+  { id: "zoom", name: "Zoom", logo: "zoom.us" },
+  { id: "thunderbird", name: "ThunderBird", logo: "thunderbird.net" },
+  { id: "signal", name: "Signal", logo: "name/signal" },
 ];
 
 const apps_utilities = [
 
-  { id: "htop",        name: "Htop",  },
-  { id: "timeshift",   name: "Timeshift",  },
-  { id: "flatpak",     name: "Flatpak",  },
-  { id: "7zip",        name: "7zip",  },
-  { id: "qbittorrent", name: "qBittorrent",  },
-  { id: "keepassxc",   name: "KeePassXC",  },
-  { id: "bitwarden",   name: "Bitwarden",  },
-  { id: "syncthing",   name: "Syncthing",  },
-  { id: "rclone",      name: "rclone",  },
+  { id: "htop", name: "Htop", },
+  { id: "timeshift", name: "Timeshift", },
+  { id: "flatpak", name: "Flatpak", },
+  { id: "7zip", name: "7zip", },
+  { id: "qbittorrent", name: "qBittorrent", },
+  { id: "keepassxc", name: "KeePassXC", },
+  { id: "bitwarden", name: "Bitwarden", },
+  { id: "syncthing", name: "Syncthing", },
+  { id: "rclone", name: "rclone", },
 
 ];
 
 const apps_gaming = [
 
-  { id: "steam",        name: "Steam",  },
-  { id: "lutris",       name: "Lutris",  },
-  { id: "heroic",       name: "Heroic",  },
-  { id: "mangohud",     name: "MangoHud",  },
-  { id: "wine",         name: "Wine",  },
-  { id: "bottles",      name: "Bottles",  },
-  { id: "gamemode",     name: "GameMode",  },
-  { id: "retroarch",    name: "RetroArch",  },
+  { id: "steam", name: "Steam", },
+  { id: "lutris", name: "Lutris", },
+  { id: "heroic", name: "Heroic", },
+  { id: "mangohud", name: "MangoHud", },
+  { id: "wine", name: "Wine", },
+  { id: "bottles", name: "Bottles", },
+  { id: "gamemode", name: "GameMode", },
+  { id: "retroarch", name: "RetroArch", },
 
 ]
 
 const apps_system = [
 
-  { id: "virtualbox",   name: "VirtualBox",  },
-  { id: "gnometweaks",  name: "GNOME Tweaks",  },
-  { id: "neofetch",     name: "neofetch",  },
-  { id: "nitrogen",     name: "Nitrogen",  },
+  { id: "virtualbox", name: "VirtualBox", },
+  { id: "gnometweaks", name: "GNOME Tweaks", },
+  { id: "neofetch", name: "neofetch", },
+  { id: "nitrogen", name: "Nitrogen", },
 
 ]
 
-  $.ajax({
-    url: '../backend/get_apps.php',
-    method: 'GET',
-    dataType: 'json',
-    success: function(data) {
+$.ajax({
+  url: '../backend/get_apps.php',
+  method: 'GET',
+  dataType: 'json',
+  success: function (data) {
 
-    }
-  })
+  }
+})
 
 
 function renderApps(apps, sectionId) {
@@ -131,19 +131,19 @@ function renderApps(apps, sectionId) {
   });
 }
 
-renderApps(apps_browsers,      "browsers-section");
-renderApps(apps_dev,           "dev-section");
-renderApps(apps_productivity,  "productivity-section");
-renderApps(apps_multimedia,    "multimedia-section");
-renderApps(apps_security,      "security-section");
+renderApps(apps_browsers, "browsers-section");
+renderApps(apps_dev, "dev-section");
+renderApps(apps_productivity, "productivity-section");
+renderApps(apps_multimedia, "multimedia-section");
+renderApps(apps_security, "security-section");
 renderApps(apps_communication, "communication-section");
-renderApps(apps_utilities,     "utilities-section");
-renderApps(apps_gaming,        "gaming-section");
-renderApps(apps_system,        "system-section")
+renderApps(apps_utilities, "utilities-section");
+renderApps(apps_gaming, "gaming-section");
+renderApps(apps_system, "system-section")
 
 let selected = []
 
-function switch_clicked(element){
+function switch_clicked(element) {
   const value = element.value;
   const confirm_div = document.getElementById("numbers-selected-apps")
   const apps_list = document.getElementById("apps-list")
@@ -158,16 +158,33 @@ function switch_clicked(element){
 
   confirm_div.innerHTML = `<p>Your Selected Apps: ${selected.length}</p>`
   confirm_div.innerHTML += `<p>Your Selected Distro: ${document.getElementById("select-distro").value}</p>`
-  apps_list.innerHTML = `${selected.map(item => `<li>${item}</li>`).join('')}`
+  apps_list.innerHTML = selected.map(item => `
+  <li class="selected-item">
+    ${item}
+    <i class="bi bi-x-lg " onclick="removeItem('${item}',${element.id.value})"></i>
+  </li>
+  `).join('');
 
-  console.log(selected);
 }
 
-document.getElementById('floating-btn').addEventListener('click', function() {
+function removeItem(item, element) {
+ 
+  selected = selected.filter(i => i !== item);
+
+  const checkbox = document.getElementById(item);
+  if (checkbox) {
+    checkbox.checked = false;
+  }
+
+  switch_clicked(checkbox);
+}
+
+
+document.getElementById('floating-btn').addEventListener('click', function () {
   const div = document.getElementById('confirm-generation');
   const floating_btn = document.getElementById("floating-btn");
 
-  if(div.style.display === 'none' || div.style.display === '') {
+  if (div.style.display === 'none' || div.style.display === '') {
     div.style.display = 'block';
     floating_btn.innerHTML = "<i class='bi bi-arrow-left-square' style='font-size: x-large;'></i>"
 
@@ -185,19 +202,17 @@ const btnConfirm = document.getElementById("btn-confirm")
 btn.addEventListener("click", () => {
   box.classList.toggle("ativo");
   btn.classList.toggle("ativo");
-   
+
 });
 btnConfirm.addEventListener("click", () => {
   overlay.classList.toggle("ativo");
 })
 
 
-function confirm_overlay(){
+function confirm_overlay() {
   document.getElementById("overlay-div").style.display = 'block';
-
-
 }
 
-function exit(){
+function exit() {
   document.getElementById("overlay-div").classList.remove("ativo");
 }

@@ -392,3 +392,35 @@ h2{
     width: 4vw;
     
 }
+
+.selected-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 5px;
+}
+
+
+.selected-item:hover {
+    background: rgba(167, 139, 250, 0.185);
+    
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 3px 5px;
+}
+
+.bi-x-lg{
+    display: none;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 3px 5px;
+    
+}
+.selected-item:hover .bi-x-lg {
+    display: block;
+    padding: 3px 5px;
+}
+
+.bi-x-lg:hover{
+    background: rgba(167, 139, 250, 0.6);
+    border-radius: 50%;
+}
