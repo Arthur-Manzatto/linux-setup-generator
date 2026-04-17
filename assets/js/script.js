@@ -1,145 +1,56 @@
-const apps_browsers = [
-
-  { id: "firefox", name: "Firefox", logo: "name/firefox" },
-  { id: "chrome", name: "Chrome", logo: "name/google%20chrome" },
-  { id: "brave", name: "Brave", logo: "name/brave" },
-  { id: "opera", name: "Opera", logo: "name/opera" },
-
-];
-
-const apps_dev = [
-
-  { id: "vscode", name: "VS Code", logo: "name/vs%20code" },
-  { id: "jetbrains", name: "JetBrains", logo: "name/jetBrains%20toolbox" },
-  { id: "git", name: "Git", logo: "name/git" },
-  { id: "nodejs", name: "Node.js", logo: "name/node%20js" },
-  { id: "python", name: "Python 3", logo: "name/python%203" },
-  { id: "docker", name: "Docker", logo: "name/docker" },
-  { id: "neovim", name: "Neovim", logo: "name/neovim" },
-  { id: "go", name: "Go", logo: "name/go" },
-  { id: "rust", name: "Rust", logo: "name/rust" },
-  { id: "java", name: "Java JDK", logo: "java.com" },
-  { id: "php", name: "PHP", logo: "name/php" },
-  { id: "postgresql", name: "PostgreSQL", logo: "name/postgresql" },
-  { id: "mysql", name: "MySQL", logo: "name/mysql" },
-  { id: "tmux", name: "Tmux", logo: "name/tmux" },
-  { id: "zsh", name: "Zsh", logo: "name/zsh" },
-
-];
-
-const apps_productivity = [
-
-  { id: "libreoffice", name: "LibreOffice", logo: "name/LibreOffice" },
-  { id: "onlyoffice", name: "OnlyOffice", logo: "name/onlyOffice" },
-  { id: "okular", name: "Okular", logo: "name/okular" },
-  { id: "obsidian", name: "Obsidian", logo: "name/obsidian" },
-
-];
-
-const apps_multimedia = [
-
-  { id: "vlc", name: "VLC", logo: "name/vlc" },
-  { id: "gimp", name: "GIMP", logo: "name/gimp" },
-  { id: "obsstudio", name: "OBS Studio", logo: "obsproject.com" },
-  { id: "kdenlive", name: "Kdenlive", logo: "kdenlive.org" },
-  { id: "audacity", name: "Audacity", logo: "audacityteam.org" },
-  { id: "inkscape", name: "Inkscape", logo: "name/inkscape" },
-  { id: "blender", name: "Blender", logo: "name/blender" },
-  { id: "krita", name: "Krita", logo: "name/krita" },
-  { id: "handbrake", name: "HandBrake", logo: "handbrake.fr" },
-  { id: "spotify", name: "Spotify", logo: "name/spotify" },
-
-];
-
-const apps_security = [
-
-  { id: "clamav", name: "ClamAV", logo: "clamav.net" },
-  { id: "ufw", name: "UFW", logo: "name/ubuntu" },
-  { id: "wireshark", name: "Wireshark", logo: "wireshark.org" },
-
-];
-
-const apps_communication = [
-
-  { id: "discord", name: "Discord", logo: "name/discord" },
-  { id: "telegram", name: "Telegram", logo: "name/telegram" },
-  { id: "zoom", name: "Zoom", logo: "zoom.us" },
-  { id: "thunderbird", name: "ThunderBird", logo: "thunderbird.net" },
-  { id: "signal", name: "Signal", logo: "name/signal" },
-];
-
-const apps_utilities = [
-
-  { id: "htop", name: "Htop", },
-  { id: "timeshift", name: "Timeshift", },
-  { id: "flatpak", name: "Flatpak", },
-  { id: "7zip", name: "7zip", },
-  { id: "qbittorrent", name: "qBittorrent", },
-  { id: "keepassxc", name: "KeePassXC", },
-  { id: "bitwarden", name: "Bitwarden", },
-  { id: "syncthing", name: "Syncthing", },
-  { id: "rclone", name: "rclone", },
-
-];
-
-const apps_gaming = [
-
-  { id: "steam", name: "Steam", },
-  { id: "lutris", name: "Lutris", },
-  { id: "heroic", name: "Heroic", },
-  { id: "mangohud", name: "MangoHud", },
-  { id: "wine", name: "Wine", },
-  { id: "bottles", name: "Bottles", },
-  { id: "gamemode", name: "GameMode", },
-  { id: "retroarch", name: "RetroArch", },
-
-]
-
-const apps_system = [
-
-  { id: "virtualbox", name: "VirtualBox", },
-  { id: "gnometweaks", name: "GNOME Tweaks", },
-  { id: "neofetch", name: "neofetch", },
-  { id: "nitrogen", name: "Nitrogen", },
-
-]
-
 $.ajax({
   url: '../backend/get_apps.php',
   method: 'GET',
   dataType: 'json',
   success: function (data) {
+    let categories = {};
 
+    data.forEach(app => {
+      const catName = app.name_cat;
+      const catSlug = app.slug_cat;
+
+      // se a categoria ainda não existe ele cria a categoria
+      if (!categories[catSlug]) {
+        categories[catSlug] = {
+          name: catName,
+          apps: []
+        };
+      }
+
+      categories[catSlug].apps.push(app);
+    });
+
+    const categories_session = document.getElementById("categories-session")
+
+    for (let slug in categories) {
+      const category = categories[slug];
+      categories_session.innerHTML += `
+        <div class="col-md-12 text-center">
+          <h2>${category.name.toUpperCase()}</h2>
+        </div>
+
+        <div class="col-md-12 d-flex flex-wrap mb-4 custom-section" id="${slug}-section">
+        </div>
+      `;
+
+      category.apps.forEach(cur_app => {
+        document.getElementById(`${slug}-section`).innerHTML += `
+        <div class="app-card col-md-2" onclick="document.getElementById('${cur_app.slug_app}').click()">
+            <div class="custom-control custom-switch">
+
+                <input type="checkbox" class="custom-control-input" id="${cur_app.slug_app}" value="${cur_app.slug_app}" onchange="switch_clicked(this)">
+                    <label class="custom-control-label" >
+                    </label>
+            </div>
+            <span class="text-white ">${cur_app.name_app}</span>
+            <img src="../assets/img/${cur_app.slug_app}.svg" class="img-fluid" style="max-width: 20px;" alt="${cur_app.name_app} logo">
+        </div>
+    `;
+      })
+    }
   }
 })
 
-
-function renderApps(apps, sectionId) {
-  apps.forEach(app => {
-    document.getElementById(sectionId).innerHTML += `
-    <div class="app-card col-md-2" onclick="document.getElementById('${app.id}').click()">
-        <div class="custom-control custom-switch">
-
-            <input type="checkbox" class="custom-control-input" id="${app.id}" value="${app.id}" onchange="switch_clicked(this)">
-                <label class="custom-control-label" >
-                </label>
-        </div>
-        <span class="text-white ">${app.name}</span>
-        <img src="../assets/img/${app.id}.svg" class="img-fluid" style="max-width: 20px;" alt="${app.name} logo">
-    </div>
-    `;
-  });
-}
-
-renderApps(apps_browsers, "browsers-section");
-renderApps(apps_dev, "dev-section");
-renderApps(apps_productivity, "productivity-section");
-renderApps(apps_multimedia, "multimedia-section");
-renderApps(apps_security, "security-section");
-renderApps(apps_communication, "communication-section");
-renderApps(apps_utilities, "utilities-section");
-renderApps(apps_gaming, "gaming-section");
-renderApps(apps_system, "system-section")
 
 let selected = []
 
@@ -167,17 +78,7 @@ function switch_clicked(element) {
 
 }
 
-function removeItem(item, element) {
- 
-  selected = selected.filter(i => i !== item);
 
-  const checkbox = document.getElementById(item);
-  if (checkbox) {
-    checkbox.checked = false;
-  }
-
-  switch_clicked(checkbox);
-}
 
 
 document.getElementById('floating-btn').addEventListener('click', function () {
@@ -208,6 +109,17 @@ btnConfirm.addEventListener("click", () => {
   overlay.classList.toggle("ativo");
 })
 
+function removeItem(item, element) {
+
+  selected = selected.filter(i => i !== item);
+
+  const checkbox = document.getElementById(item);
+  if (checkbox) {
+    checkbox.checked = false;
+  }
+
+  switch_clicked(checkbox);
+}
 
 function confirm_overlay() {
   document.getElementById("overlay-div").style.display = 'block';
