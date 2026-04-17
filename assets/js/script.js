@@ -51,6 +51,40 @@ $.ajax({
   }
 })
 
+const comboBox_distro = document.getElementById("select-distro")
+$.ajax({
+  url: '../backend/get_distros.php',
+  method: 'GET',
+  dataType: 'json',
+  success: function (data){
+    data.forEach(distro => {
+      comboBox_distro.innerHTML += `<option value="${distro.id_distro}">${distro.name_distro}</option>` 
+    })
+    
+  }
+})
+
+comboBox_distro.addEventListener("change", function() {
+  selectAdistro(this.value);
+});
+
+function selectAdistro(selected_id){
+  $.ajax({
+    url: '../backend/get_distros.php',
+    method: 'POST',
+    dataType: 'json',
+    data: {
+      selected_distro: selected_id
+    },
+    success: function(data) {
+      console.log("SUCESSO:", data);
+    },
+    error: function(xhr) {
+      console.log("ERRO:", xhr.responseText);
+    }
+  })
+}
+
 
 let selected = []
 
